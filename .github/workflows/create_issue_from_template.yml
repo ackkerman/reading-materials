@@ -2,6 +2,7 @@ name: Create Weekly Readings
 on:
   schedule:
     - cron: '0 0 * * 6' # 週に一回、土曜日の0時に実行
+  workflow_dispatch:
 
 jobs:
   create-issue:
