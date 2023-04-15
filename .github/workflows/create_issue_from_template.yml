@@ -1,0 +1,17 @@
+name: Create Weekly Readings
+on:
+  schedule:
+    - cron: '0 0 * * 6' # 週に一回、土曜日の0時に実行
+
+jobs:
+  create-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Create Issue
+        uses: peter-evans/create-issue-from-template@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          title: 'Weekly Readings - YYYY-MM-DD' # タイトルの日付を現在の日付に変更
+          template: .github/ISSUE_TEMPLATE/weekly-readings.md # テンプレートファイルのパスを指定
