@@ -9,9 +9,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Create Issue
-        uses: peter-evans/create-issue@v2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          title: 'Weekly Issue' # Issueのタイトル
-          body: 'This is the weekly issue.' # Issueの本文
+        run: |
+          curl --location --request POST 'https://api.github.com/repos/:owner/:repo/issues' \
+          --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+          --header 'Content-Type: application/json' \
+          --data-raw '{
+              "title": "Weekly Issue",
+              "body": ""
+          }'
