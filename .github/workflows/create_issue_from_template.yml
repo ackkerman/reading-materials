@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Create Issue
-        uses: peter-evans/create-issue-from-template@v2
+        uses: peter-evans/create-issue-from-file@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
