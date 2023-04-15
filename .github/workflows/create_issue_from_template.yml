@@ -15,4 +15,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           title: 'Weekly Readings - YYYY-MM-DD' # タイトルの日付を現在の日付に変更
-          template: .github/ISSUE_TEMPLATE/weekly-readings.md # テンプレートファイルのパスを指定
+          content-filepath: .github/ISSUE_TEMPLATE/weekly-readings.md # テンプレートファイルのパスを指定
