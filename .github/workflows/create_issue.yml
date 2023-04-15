@@ -12,7 +12,7 @@ jobs:
         run: |
           date=$(date '+%Y/%m/%d')
           title="Weekly Issue - $date"
-          body="This is the weekly issue."
+          body=""
           curl --location --request POST 'https://api.github.com/repos/moxak/reading-materials/issues' \
           --header 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
           --header 'Content-Type: application/json' \
