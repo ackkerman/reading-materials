@@ -20,12 +20,9 @@ jobs:
 
     - name: Install dependencies
       run: |
-        npm install -g github-api
-        npm install -g markdown-table
+        npm install -g node-fetch
 
     - name: Export Issues to Markdown
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         node export_issues_to_markdown.js
 
