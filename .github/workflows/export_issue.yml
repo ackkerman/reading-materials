@@ -24,7 +24,7 @@ jobs:
 
     - name: Export Issues to Markdown
       run: |
-        node export_issues_to_markdown.js
+        node export_issues_to_markdown.mjs
 
     - name: Commit and push changes
       run: |
