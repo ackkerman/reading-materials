@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Create Weekly Readings
         run: |
-          date=$(date '+%Y/%m/%d')
+          date=$(date -d "+1 week" '+%Y/%m/%d')
           title="Weekly Readings - $date"
           body=""
           curl --location --request POST 'https://api.github.com/repos/moxak/reading-materials/issues' \
