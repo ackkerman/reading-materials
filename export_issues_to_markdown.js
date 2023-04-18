@@ -1,6 +1,5 @@
-// const fs = require('fs');
-import fs from 'fs';
-import fetch from "node-fetch";
+const fs = require('fs');
+const fetch = require('node-fetch-commonjs')
 
 // Get all issues: GET | https://api.github.com/repos/{owner}/{repository}/issues
 // {
