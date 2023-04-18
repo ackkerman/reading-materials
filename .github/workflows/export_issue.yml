@@ -3,8 +3,8 @@ name: Export Issues to Markdown
 on:
   schedule:
     - cron: '0 0 1 * *' # Run at 00:00 on the first day of every month
-    workflow_dispatch:
-    
+  workflow_dispatch:
+
 jobs:
   export_issues:
     runs-on: ubuntu-latest
