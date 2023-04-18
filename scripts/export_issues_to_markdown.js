@@ -37,6 +37,8 @@ const GITHUB_REPO_NAME = 'reading-materials';
 const GITHUB_REPO_OWNER = 'moxak';
 const GITHUB_ISSUES_ENDPOINT = `https://api.github.com/repos/${GITHUB_REPO_OWNER}/${GITHUB_REPO_NAME}/issues`;
 
+// TODO: Generate file for only new issues
+
 // Main function
 (async () => {
   // Get all issues from repository
