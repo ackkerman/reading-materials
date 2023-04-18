@@ -1,0 +1,38 @@
+name: Export Issues to Markdown
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Run at 00:00 on the first day of every month
+    workflow_dispatch:
+    
+jobs:
+  export_issues:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - name: Install dependencies
+      run: |
+        npm install -g github-api
+        npm install -g markdown-table
+
+    - name: Export Issues to Markdown
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        node export_issues_to_markdown.js
+
+    - name: Commit and push changes
+      run: |
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<email>"
+        git add docs/
+        git commit -m "Export Issues to Markdown (monthly update)"
+        git push
